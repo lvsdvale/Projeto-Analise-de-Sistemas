@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+
+  postgres_timemarker:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - banco_postgres_timemarker:/var/lib/postgresql/data
+    networks:
+      - postgres_network
+
+volumes:
+  banco_postgres_timemarker:
+    name: postgres_timemarker_volume
+
+networks:
+  postgres_network:
+    name: postgres_network
