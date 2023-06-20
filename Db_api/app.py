@@ -9,11 +9,11 @@ import psycopg2
 import uvicorn
 
 conn = psycopg2.connect(
-                database=getenv('PG_DATABASE'),
-                user=getenv('PG_USER'),
-                password=getenv('PG_PASSWORD'),
-                host=getenv('PG_HOST'),
-                port=getenv('PG_PORT')
+                database='postgres',
+                user='admin',
+                password='admin',
+                host='localhost',
+                port=5432
             )
 
 cursor = conn.cursor()

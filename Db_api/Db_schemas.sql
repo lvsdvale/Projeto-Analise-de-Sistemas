@@ -16,13 +16,11 @@ create table users(
     user_email varchar(255) not null,
     user_password varchar(255) not null,
     user_name varchar(255) not null,
-    user_company_id int,
     user_adm boolean, --Admin, sys_user
     user_type varchar(255), --Single user or company user
     _created_at timestamp not null,
     _updated_at timestamp not null,
     primary key(user_id),
-    foreign key (user_company_id) references companies(company_id)
 );
 
 create table projects(
